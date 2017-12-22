@@ -12,8 +12,10 @@ const currentGame = {
 }
 
 const checkForWinner = function () {
-  if (currentGame.cells[0] === 'x' && currentGame.cells[1] === 'x' && currentGame.cells[2] === 'x' || currentGame.cells[3] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[5] === 'x') {
+  if ((currentGame.cells[0] === 'x' && currentGame.cells[1] === 'x' && currentGame.cells[2] === 'x') || (currentGame.cells[3] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[5] === 'x') || (currentGame.cells[6] === 'x' && currentGame.cells[7] === 'x' && currentGame.cells[8] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[3] === 'x' && currentGame.cells[6] === 'x') || (currentGame.cells[1] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[7] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[1] === 'x' && currentGame.cells[2] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[8] === 'x') || (currentGame.cells[2] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[6] === 'x')) {
     console.log('x is the winner!')
+  } else if ((currentGame.cells[0] === 'o' && currentGame.cells[1] === 'o' && currentGame.cells[2] === 'o') || (currentGame.cells[3] === 'o' && currentGame.cells[4] === 'o' && currentGame.cells[5] === 'o') || (currentGame.cells[6] === 'o' && currentGame.cells[7] === 'o' && currentGame.cells[8] === 'o') || (currentGame.cells[0] === 'o' && currentGame.cells[3] === 'o' && currentGame.cells[6] === 'o') || (currentGame.cells[1] === 'o' && currentGame.cells[4] === 'o' && currentGame.cells[7] === 'o') || (currentGame.cells[0] === 'o' && currentGame.cells[1] === 'o' && currentGame.cells[2] === 'o') || (currentGame.cells[0] === 'o' && currentGame.cells[4] === 'o' && currentGame.cells[8] === 'o') || (currentGame.cells[2] === 'o' && currentGame.cells[4] === 'o' && currentGame.cells[6] === 'o')) {
+    console.log('o is the winner!')
   }
 }
 
