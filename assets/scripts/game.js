@@ -11,7 +11,17 @@ const currentGame = {
   player_o: null
 }
 
-const nextTurn = 'x'
+let playerToken = 'x'
+
+const changeTurn = function () {
+  if (playerToken === 'x') {
+    playerToken = 'o'
+    console.log(playerToken)
+  } else {
+    playerToken = 'x'
+    console.log(playerToken)
+  }
+}
 
 const checkForWinner = function () {
   if ((currentGame.cells[0] === 'x' && currentGame.cells[1] === 'x' && currentGame.cells[2] === 'x') || (currentGame.cells[3] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[5] === 'x') || (currentGame.cells[6] === 'x' && currentGame.cells[7] === 'x' && currentGame.cells[8] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[3] === 'x' && currentGame.cells[6] === 'x') || (currentGame.cells[1] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[7] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[1] === 'x' && currentGame.cells[2] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[8] === 'x') || (currentGame.cells[2] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[6] === 'x')) {
@@ -29,68 +39,104 @@ $('#index-zero').on('click', function () {
 
   // const i = 0
   // if (currentGame.cells[i] === '') {
-  $('#index-zero').text(nextTurn)
-  // } else {
-  //   console.log("You can't add to this space")
-  // }
-  currentGame.cells.splice(0, 1, nextTurn)
-  console.log(currentGame.cells)
-  checkForWinner()
+  if (currentGame.cells[0] === '') {
+    $('#index-zero').text(playerToken)
+    currentGame.cells.splice(0, 1, playerToken)
+    console.log(currentGame.cells)
+    checkForWinner()
+    changeTurn()
+  } else {
+    console.log("You can't add to this space!")
+  }
 })
 
 $('#index-one').on('click', function () {
   // console.log('Clicking on index1')
-  $('#index-one').text('x')
-  currentGame.cells.splice(1, 1, 'x')
-  console.log(currentGame.cells)
-  checkForWinner()
+  if (currentGame.cells[1] === '') {
+    $('#index-one').text(playerToken)
+    currentGame.cells.splice(1, 1, playerToken)
+    console.log(currentGame.cells)
+    checkForWinner()
+    changeTurn()
+  } else {
+    console.log("You can't add to this space!")
+  }
 })
 $('#index-two').on('click', function () {
   // console.log('Clicking on index2')
-  $('#index-two').text('x')
-  currentGame.cells.splice(2, 1, 'x')
-  console.log(currentGame.cells)
-  checkForWinner()
+  if (currentGame.cells[2] === '') {
+    $('#index-two').text(playerToken)
+    currentGame.cells.splice(2, 1, playerToken)
+    console.log(currentGame.cells)
+    checkForWinner()
+    changeTurn()
+  } else {
+    console.log("You can't add to this space!")
+  }
 })
 $('#index-three').on('click', function () {
-  // console.log('Clicking on index3')
-  $('#index-three').text('x')
-  currentGame.cells.splice(3, 1, 'x')
-  console.log(currentGame.cells)
-  checkForWinner()
+  if (currentGame.cells[3] === '') {
+    $('#index-three').text(playerToken)
+    currentGame.cells.splice(3, 1, playerToken)
+    console.log(currentGame.cells)
+    checkForWinner()
+    changeTurn()
+  } else {
+    console.log("You can't add to this space!")
+  }
 })
 $('#index-four').on('click', function () {
-  // console.log('Clicking on index4')
-  $('#index-four').text('x')
-  currentGame.cells.splice(4, 1, 'x')
-  console.log(currentGame.cells)
-  checkForWinner()
+  if (currentGame.cells[4] === '') {
+    $('#index-four').text(playerToken)
+    currentGame.cells.splice(4, 1, playerToken)
+    console.log(currentGame.cells)
+    checkForWinner()
+    changeTurn()
+  } else {
+    console.log("You can't add to this space!")
+  }
 })
 $('#index-five').on('click', function () {
-  // console.log('Clicking on index5')
-  $('#index-five').text('x')
-  currentGame.cells.splice(5, 1, 'x')
-  console.log(currentGame.cells)
-  checkForWinner()
+  if (currentGame.cells[5] === '') {
+    $('#index-five').text(playerToken)
+    currentGame.cells.splice(5, 1, playerToken)
+    console.log(currentGame.cells)
+    checkForWinner()
+    changeTurn()
+  } else {
+    console.log("You can't add to this space!")
+  }
 })
 $('#index-six').on('click', function () {
-  // console.log('Clicking on index6')
-  $('#index-six').text('x')
-  currentGame.cells.splice(6, 1, 'x')
-  console.log(currentGame.cells)
-  checkForWinner()
+  if (currentGame.cells[6] === '') {
+    $('#index-six').text(playerToken)
+    currentGame.cells.splice(6, 1, playerToken)
+    console.log(currentGame.cells)
+    checkForWinner()
+    changeTurn()
+  } else {
+    console.log("You can't add to this space!")
+  }
 })
 $('#index-seven').on('click', function () {
-  // console.log('Clicking on index7')
-  $('#index-seven').text('x')
-  currentGame.cells.splice(7, 1, 'x')
-  console.log(currentGame.cells)
-  checkForWinner()
+  if (currentGame.cells[7] === '') {
+    $('#index-seven').text(playerToken)
+    currentGame.cells.splice(7, 1, playerToken)
+    console.log(currentGame.cells)
+    checkForWinner()
+    changeTurn()
+  } else {
+    console.log("You can't add to this space!")
+  }
 })
 $('#index-eight').on('click', function () {
-  // console.log('Clicking on index8')
-  $('#index-eight').text('x')
-  currentGame.cells.splice(8, 1, 'x')
-  console.log(currentGame.cells)
-  checkForWinner()
+  if (currentGame.cells[8] === '') {
+    $('#index-eight').text(playerToken)
+    currentGame.cells.splice(8, 1, playerToken)
+    console.log(currentGame.cells)
+    checkForWinner()
+    changeTurn()
+  } else {
+    console.log("You can't add to this space!")
+  }
 })
