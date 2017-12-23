@@ -1,5 +1,6 @@
 'use strict'
 
+// this is the blank game board
 const currentGame = {
   id: 1,
   cells: ['', '', '', '', '', '', '', '', ''],
@@ -11,8 +12,11 @@ const currentGame = {
   player_o: null
 }
 
+// playerToken is always 'x' to start the game.
 let playerToken = 'x'
 
+// this function changes the token ('x' or 'o') that is added to the
+// currentGame.cells array and to the DOM.
 const changeTurn = function () {
   if (playerToken === 'x') {
     playerToken = 'o'
@@ -23,7 +27,11 @@ const changeTurn = function () {
   }
 }
 
+// this is a counter of the number of turns
 let moves = 0
+
+// this function checks for a tie if the number of moves is 9, sets the
+// currentGame.over to true, and ends the game.
 const checkForTie = function () {
   if (moves === 9) {
     console.log("It's a tie!")
@@ -32,12 +40,18 @@ const checkForTie = function () {
   }
 }
 
+// this function ends the game (currentGame.over to true) when 'x' or 'o'
+// win or when the game is tied. Also prevents further clicks on the
+// game board.
 const endGame = function () {
   if (currentGame.over === true) {
     console.log('Restart game')
     $('.box').off('click')
   }
 }
+
+// this function checks to see if either 'x' or 'o' have won. If so,
+// it changes the currentGame.over = true and invokes the endGame function.
 
 const checkForWinner = function () {
   if ((currentGame.cells[0] === 'x' && currentGame.cells[1] === 'x' && currentGame.cells[2] === 'x') || (currentGame.cells[3] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[5] === 'x') || (currentGame.cells[6] === 'x' && currentGame.cells[7] === 'x' && currentGame.cells[8] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[3] === 'x' && currentGame.cells[6] === 'x') || (currentGame.cells[1] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[7] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[1] === 'x' && currentGame.cells[2] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[8] === 'x') || (currentGame.cells[2] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[6] === 'x')) {
@@ -51,14 +65,9 @@ const checkForWinner = function () {
   }
 }
 
-$('#index-zero').on('click', function () {
-  // console.log('Clicking on index0')
-  // check to see if something has been added to currentGame.cells[0]. If so,
-  // don't add anything and show a message saying that you can't add anything to
-  // this space. If not, add either 'x' or 'o' to currentGame.cells[0]
+// these are all of the click events for the grid.
 
-  // const i = 0
-  // if (currentGame.cells[i] === '') {
+$('#index-zero').on('click', function () {
   if (currentGame.cells[0] === '') {
     $('#index-zero').text(playerToken)
     currentGame.cells.splice(0, 1, playerToken)
@@ -86,6 +95,7 @@ $('#index-one').on('click', function () {
     console.log("You can't add to this space!")
   }
 })
+
 $('#index-two').on('click', function () {
   // console.log('Clicking on index2')
   if (currentGame.cells[2] === '') {
@@ -100,6 +110,7 @@ $('#index-two').on('click', function () {
     console.log("You can't add to this space!")
   }
 })
+
 $('#index-three').on('click', function () {
   if (currentGame.cells[3] === '') {
     $('#index-three').text(playerToken)
@@ -113,6 +124,7 @@ $('#index-three').on('click', function () {
     console.log("You can't add to this space!")
   }
 })
+
 $('#index-four').on('click', function () {
   if (currentGame.cells[4] === '') {
     $('#index-four').text(playerToken)
@@ -126,6 +138,7 @@ $('#index-four').on('click', function () {
     console.log("You can't add to this space!")
   }
 })
+
 $('#index-five').on('click', function () {
   if (currentGame.cells[5] === '') {
     $('#index-five').text(playerToken)
@@ -139,6 +152,7 @@ $('#index-five').on('click', function () {
     console.log("You can't add to this space!")
   }
 })
+
 $('#index-six').on('click', function () {
   if (currentGame.cells[6] === '') {
     $('#index-six').text(playerToken)
@@ -152,6 +166,7 @@ $('#index-six').on('click', function () {
     console.log("You can't add to this space!")
   }
 })
+
 $('#index-seven').on('click', function () {
   if (currentGame.cells[7] === '') {
     $('#index-seven').text(playerToken)
@@ -165,6 +180,7 @@ $('#index-seven').on('click', function () {
     console.log("You can't add to this space!")
   }
 })
+
 $('#index-eight').on('click', function () {
   if (currentGame.cells[8] === '') {
     $('#index-eight').text(playerToken)
