@@ -52,11 +52,11 @@ $('#index-zero').on('click', function () {
     console.log(currentGame.cells)
     checkForWinner()
     changeTurn()
+    moves++
+    checkForTie()
   } else {
     console.log("You can't add to this space!")
   }
-  moves++
-  checkForTie()
 })
 
 $('#index-one').on('click', function () {
@@ -67,11 +67,11 @@ $('#index-one').on('click', function () {
     console.log(currentGame.cells)
     checkForWinner()
     changeTurn()
+    moves++
+    checkForTie()
   } else {
     console.log("You can't add to this space!")
   }
-  moves++
-  checkForTie()
 })
 $('#index-two').on('click', function () {
   // console.log('Clicking on index2')
@@ -81,11 +81,11 @@ $('#index-two').on('click', function () {
     console.log(currentGame.cells)
     checkForWinner()
     changeTurn()
+    moves++
+    checkForTie()
   } else {
     console.log("You can't add to this space!")
   }
-  moves++
-  checkForTie()
 })
 $('#index-three').on('click', function () {
   if (currentGame.cells[3] === '') {
@@ -94,11 +94,11 @@ $('#index-three').on('click', function () {
     console.log(currentGame.cells)
     checkForWinner()
     changeTurn()
+    moves++
+    checkForTie()
   } else {
     console.log("You can't add to this space!")
   }
-  moves++
-  checkForTie()
 })
 $('#index-four').on('click', function () {
   if (currentGame.cells[4] === '') {
@@ -107,11 +107,11 @@ $('#index-four').on('click', function () {
     console.log(currentGame.cells)
     checkForWinner()
     changeTurn()
+    moves++
+    checkForTie()
   } else {
     console.log("You can't add to this space!")
   }
-  moves++
-  checkForTie()
 })
 $('#index-five').on('click', function () {
   if (currentGame.cells[5] === '') {
@@ -120,11 +120,11 @@ $('#index-five').on('click', function () {
     console.log(currentGame.cells)
     checkForWinner()
     changeTurn()
+    moves++
+    checkForTie()
   } else {
     console.log("You can't add to this space!")
   }
-  moves++
-  checkForTie()
 })
 $('#index-six').on('click', function () {
   if (currentGame.cells[6] === '') {
@@ -133,11 +133,11 @@ $('#index-six').on('click', function () {
     console.log(currentGame.cells)
     checkForWinner()
     changeTurn()
+    moves++
+    checkForTie()
   } else {
     console.log("You can't add to this space!")
   }
-  moves++
-  checkForTie()
 })
 $('#index-seven').on('click', function () {
   if (currentGame.cells[7] === '') {
@@ -146,11 +146,11 @@ $('#index-seven').on('click', function () {
     console.log(currentGame.cells)
     checkForWinner()
     changeTurn()
+    moves++
+    checkForTie()
   } else {
     console.log("You can't add to this space!")
   }
-  moves++
-  checkForTie()
 })
 $('#index-eight').on('click', function () {
   if (currentGame.cells[8] === '') {
@@ -159,9 +159,9 @@ $('#index-eight').on('click', function () {
     console.log(currentGame.cells)
     checkForWinner()
     changeTurn()
+    moves++
+    checkForTie()
   } else {
     console.log("You can't add to this space!")
   }
-  moves++
-  checkForTie()
 })
