@@ -1,6 +1,8 @@
 'use strict'
 
 // this is the blank game board
+// this game board is hard coded in and I need to figure out to to use the
+// game board created by the API instead. Maybe currentGame = data.game?
 const currentGame = {
   id: 1,
   cells: ['', '', '', '', '', '', '', '', ''],

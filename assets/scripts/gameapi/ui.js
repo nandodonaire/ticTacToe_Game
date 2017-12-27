@@ -29,10 +29,12 @@ const searchGameFailure = function (error) {
 }
 
 const createGameSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   console.log('Created game!')
   $('#message').text('Created game!')
   $('#message').css('color', 'green')
+  store.game = data.game
+  console.log('the stored data', store)
 }
 
 const createGameFailure = function (error) {
