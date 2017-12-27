@@ -33,7 +33,7 @@ const onUpdateGame = function (event) {
   const data = getFormFields(this)
   console.log('events', data)
   event.preventDefault()
-  gameApi.searchGame(data)
+  gameApi.updateGame(data)
     .then(gameUi.updateGameSuccess)
     .catch(gameUi.updateGameFailure)
 }
