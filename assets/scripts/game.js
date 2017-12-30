@@ -3,7 +3,7 @@
 // this is the blank game board
 // this game board is hard coded in and I need to figure out to to use the
 // game board created by the API instead. Maybe currentGame = data.game?
-const currentGame = {
+let currentGame = {
   id: 1,
   cells: ['', '', '', '', '', '', '', '', ''],
   over: false,
@@ -50,6 +50,32 @@ const endGame = function () {
     console.log('Restart game')
     $('.box').off('click')
   }
+}
+
+// function to restart the game, although it's currently refreshing the page.
+
+const restartGame = function () {
+  $('#restart-game').on('submit', function () {
+    currentGame = {
+      id: 1,
+      cells: ['', '', '', '', '', '', '', '', ''],
+      over: false,
+      player_x: {
+        id: 1,
+        email: 'and@and.com'
+      },
+      player_o: null
+    }
+    $('#index-zero').text('')
+    $('#index-one').text('')
+    $('#index-two').text('')
+    $('#index-three').text('')
+    $('#index-four').text('')
+    $('#index-five').text('')
+    $('#index-six').text('')
+    $('#index-seven').text('')
+    $('#index-eight').text('')
+  })
 }
 
 // this function checks to see if either 'x' or 'o' have won. If so,
