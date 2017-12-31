@@ -29,20 +29,20 @@ const onCreateGame = function (event) {
     .catch(gameUi.createGameFailure)
 }
 
-const onUpdateGame = function (event) {
-  const data = getFormFields(this)
-  console.log('events', data)
-  event.preventDefault()
-  gameApi.updateGame(data)
-    .then(gameUi.updateGameSuccess)
-    .catch(gameUi.updateGameFailure)
-}
+// const onUpdateGame = function (event) {
+//   const data = getFormFields(this)
+//   console.log('events', data)
+//   event.preventDefault()
+//   gameApi.updateGame(data)
+//     .then(gameUi.updateGameSuccess)
+//     .catch(gameUi.updateGameFailure)
+// }
 
 const addHandlers = function () {
   $('#games-search').on('submit', onSearchGames)
   $('#game-search').on('submit', onSearchGame)
   $('#game-create').on('submit', onCreateGame)
-  $('#game-update').on('submit', onUpdateGame)
+  // $('#game-update').on('submit', onUpdateGame)
 }
 
 module.exports = {

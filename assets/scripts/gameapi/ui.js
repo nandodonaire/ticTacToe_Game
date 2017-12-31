@@ -43,18 +43,18 @@ const createGameFailure = function (error) {
   $('#message').css('color', 'red')
 }
 
-const updateGameSuccess = function (data) {
-  console.log('Updated game!')
-  console.log(data)
-  $('#message').text('Updated game!')
-  $('#message').css('color', 'green')
-}
-
-const updateGameFailure = function (error) {
-  console.error(error)
-  $('#message').text('Unable to update game!')
-  $('#message').css('color', 'red')
-}
+// const updateGameSuccess = function (data) {
+//   console.log('Updated game!')
+//   console.log(data)
+//   $('#message').text('Updated game!')
+//   $('#message').css('color', 'green')
+// }
+//
+// const updateGameFailure = function (error) {
+//   console.error(error)
+//   $('#message').text('Unable to update game!')
+//   $('#message').css('color', 'red')
+// }
 
 module.exports = {
   searchGamesSuccess,
@@ -62,7 +62,7 @@ module.exports = {
   searchGameSuccess,
   searchGameFailure,
   createGameSuccess,
-  createGameFailure,
-  updateGameSuccess,
-  updateGameFailure
+  createGameFailure
+  // updateGameSuccess,
+  // updateGameFailure
 }

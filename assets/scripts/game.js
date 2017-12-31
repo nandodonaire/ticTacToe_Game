@@ -1,8 +1,9 @@
 'use strict'
 
+const config = require('./config')
+const store = require('./store')
+
 // this is the blank game board
-// this game board is hard coded in and I need to figure out to to use the
-// game board created by the API instead. Maybe currentGame = data.game?
 let currentGame = {
   id: 1,
   cells: ['', '', '', '', '', '', '', '', ''],
@@ -96,9 +97,28 @@ $('#index0').on('click', function () {
     currentGame.cells.splice(0, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
-    changeTurn()
     moves++
     checkForTie()
+    const updateGame = function () {
+      return $.ajax({
+        url: config.apiOrigin + '/games/' + store.game.id,
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Token token=' + store.user.token
+        },
+        data: {
+          'game': {
+            'cell': {
+              'index': 0,
+              'value': playerToken
+            },
+            'over': currentGame.over
+          }
+        }
+      })
+    }
+    updateGame()
+    changeTurn()
   } else {
     console.log("You can't add to this space!")
   }
@@ -111,9 +131,28 @@ $('#index1').on('click', function () {
     currentGame.cells.splice(1, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
-    changeTurn()
     moves++
     checkForTie()
+    const updateGame = function () {
+      return $.ajax({
+        url: config.apiOrigin + '/games/' + store.game.id,
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Token token=' + store.user.token
+        },
+        data: {
+          'game': {
+            'cell': {
+              'index': 1,
+              'value': playerToken
+            },
+            'over': currentGame.over
+          }
+        }
+      })
+    }
+    updateGame()
+    changeTurn()
   } else {
     console.log("You can't add to this space!")
   }
@@ -126,9 +165,28 @@ $('#index2').on('click', function () {
     currentGame.cells.splice(2, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
-    changeTurn()
     moves++
     checkForTie()
+    const updateGame = function () {
+      return $.ajax({
+        url: config.apiOrigin + '/games/' + store.game.id,
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Token token=' + store.user.token
+        },
+        data: {
+          'game': {
+            'cell': {
+              'index': 2,
+              'value': playerToken
+            },
+            'over': currentGame.over
+          }
+        }
+      })
+    }
+    updateGame()
+    changeTurn()
   } else {
     console.log("You can't add to this space!")
   }
@@ -140,9 +198,28 @@ $('#index3').on('click', function () {
     currentGame.cells.splice(3, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
-    changeTurn()
     moves++
     checkForTie()
+    const updateGame = function () {
+      return $.ajax({
+        url: config.apiOrigin + '/games/' + store.game.id,
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Token token=' + store.user.token
+        },
+        data: {
+          'game': {
+            'cell': {
+              'index': 3,
+              'value': playerToken
+            },
+            'over': currentGame.over
+          }
+        }
+      })
+    }
+    updateGame()
+    changeTurn()
   } else {
     console.log("You can't add to this space!")
   }
@@ -154,9 +231,28 @@ $('#index4').on('click', function () {
     currentGame.cells.splice(4, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
-    changeTurn()
     moves++
     checkForTie()
+    const updateGame = function () {
+      return $.ajax({
+        url: config.apiOrigin + '/games/' + store.game.id,
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Token token=' + store.user.token
+        },
+        data: {
+          'game': {
+            'cell': {
+              'index': 4,
+              'value': playerToken
+            },
+            'over': currentGame.over
+          }
+        }
+      })
+    }
+    updateGame()
+    changeTurn()
   } else {
     console.log("You can't add to this space!")
   }
@@ -168,9 +264,28 @@ $('#index5').on('click', function () {
     currentGame.cells.splice(5, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
-    changeTurn()
     moves++
     checkForTie()
+    const updateGame = function () {
+      return $.ajax({
+        url: config.apiOrigin + '/games/' + store.game.id,
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Token token=' + store.user.token
+        },
+        data: {
+          'game': {
+            'cell': {
+              'index': 5,
+              'value': playerToken
+            },
+            'over': currentGame.over
+          }
+        }
+      })
+    }
+    updateGame()
+    changeTurn()
   } else {
     console.log("You can't add to this space!")
   }
@@ -182,9 +297,28 @@ $('#index6').on('click', function () {
     currentGame.cells.splice(6, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
-    changeTurn()
     moves++
     checkForTie()
+    const updateGame = function () {
+      return $.ajax({
+        url: config.apiOrigin + '/games/' + store.game.id,
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Token token=' + store.user.token
+        },
+        data: {
+          'game': {
+            'cell': {
+              'index': 6,
+              'value': playerToken
+            },
+            'over': currentGame.over
+          }
+        }
+      })
+    }
+    updateGame()
+    changeTurn()
   } else {
     console.log("You can't add to this space!")
   }
@@ -196,9 +330,28 @@ $('#index7').on('click', function () {
     currentGame.cells.splice(7, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
-    changeTurn()
     moves++
     checkForTie()
+    const updateGame = function () {
+      return $.ajax({
+        url: config.apiOrigin + '/games/' + store.game.id,
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Token token=' + store.user.token
+        },
+        data: {
+          'game': {
+            'cell': {
+              'index': 7,
+              'value': playerToken
+            },
+            'over': currentGame.over
+          }
+        }
+      })
+    }
+    updateGame()
+    changeTurn()
   } else {
     console.log("You can't add to this space!")
   }
@@ -210,9 +363,28 @@ $('#index8').on('click', function () {
     currentGame.cells.splice(8, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
-    changeTurn()
     moves++
     checkForTie()
+    const updateGame = function () {
+      return $.ajax({
+        url: config.apiOrigin + '/games/' + store.game.id,
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Token token=' + store.user.token
+        },
+        data: {
+          'game': {
+            'cell': {
+              'index': 8,
+              'value': playerToken
+            },
+            'over': currentGame.over
+          }
+        }
+      })
+    }
+    updateGame()
+    changeTurn()
   } else {
     console.log("You can't add to this space!")
   }
