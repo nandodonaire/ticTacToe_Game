@@ -55,28 +55,23 @@ const endGame = function () {
 // function to restart the game, although it's currently refreshing the page.
 
 const restartGame = function () {
-  $('#restart-game').on('submit', function () {
-    currentGame = {
+  currentGame = {
+    id: 1,
+    cells: ['', '', '', '', '', '', '', '', ''],
+    over: false,
+    player_x: {
       id: 1,
-      cells: ['', '', '', '', '', '', '', '', ''],
-      over: false,
-      player_x: {
-        id: 1,
-        email: 'and@and.com'
-      },
-      player_o: null
-    }
-    $('#index-zero').text('')
-    $('#index-one').text('')
-    $('#index-two').text('')
-    $('#index-three').text('')
-    $('#index-four').text('')
-    $('#index-five').text('')
-    $('#index-six').text('')
-    $('#index-seven').text('')
-    $('#index-eight').text('')
-  })
+      email: 'and@and.com'
+    },
+    player_o: null
+  }
+  $('.box').empty()
+  $('#message').empty()
+  currentGame.over = false
+  currentGame.cells = ['', '', '', '', '', '', '', '', '']
+  playerToken = 'x'
 }
+$('#game-create').on('submit', restartGame)
 
 // this function checks to see if either 'x' or 'o' have won. If so,
 // it changes the currentGame.over = true and invokes the endGame function.
@@ -95,9 +90,9 @@ const checkForWinner = function () {
 
 // these are all of the click events for the grid.
 
-$('#index-zero').on('click', function () {
+$('#index0').on('click', function () {
   if (currentGame.cells[0] === '') {
-    $('#index-zero').text(playerToken)
+    $('#index0').text(playerToken)
     currentGame.cells.splice(0, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
@@ -109,10 +104,10 @@ $('#index-zero').on('click', function () {
   }
 })
 
-$('#index-one').on('click', function () {
+$('#index1').on('click', function () {
   // console.log('Clicking on index1')
   if (currentGame.cells[1] === '') {
-    $('#index-one').text(playerToken)
+    $('#index1').text(playerToken)
     currentGame.cells.splice(1, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
@@ -124,10 +119,10 @@ $('#index-one').on('click', function () {
   }
 })
 
-$('#index-two').on('click', function () {
+$('#index2').on('click', function () {
   // console.log('Clicking on index2')
   if (currentGame.cells[2] === '') {
-    $('#index-two').text(playerToken)
+    $('#index2').text(playerToken)
     currentGame.cells.splice(2, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
@@ -139,9 +134,9 @@ $('#index-two').on('click', function () {
   }
 })
 
-$('#index-three').on('click', function () {
+$('#index3').on('click', function () {
   if (currentGame.cells[3] === '') {
-    $('#index-three').text(playerToken)
+    $('#index3').text(playerToken)
     currentGame.cells.splice(3, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
@@ -153,9 +148,9 @@ $('#index-three').on('click', function () {
   }
 })
 
-$('#index-four').on('click', function () {
+$('#index4').on('click', function () {
   if (currentGame.cells[4] === '') {
-    $('#index-four').text(playerToken)
+    $('#index4').text(playerToken)
     currentGame.cells.splice(4, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
@@ -167,9 +162,9 @@ $('#index-four').on('click', function () {
   }
 })
 
-$('#index-five').on('click', function () {
+$('#index5').on('click', function () {
   if (currentGame.cells[5] === '') {
-    $('#index-five').text(playerToken)
+    $('#index5').text(playerToken)
     currentGame.cells.splice(5, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
@@ -181,9 +176,9 @@ $('#index-five').on('click', function () {
   }
 })
 
-$('#index-six').on('click', function () {
+$('#index6').on('click', function () {
   if (currentGame.cells[6] === '') {
-    $('#index-six').text(playerToken)
+    $('#index6').text(playerToken)
     currentGame.cells.splice(6, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
@@ -195,9 +190,9 @@ $('#index-six').on('click', function () {
   }
 })
 
-$('#index-seven').on('click', function () {
+$('#index7').on('click', function () {
   if (currentGame.cells[7] === '') {
-    $('#index-seven').text(playerToken)
+    $('#index7').text(playerToken)
     currentGame.cells.splice(7, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
@@ -209,9 +204,9 @@ $('#index-seven').on('click', function () {
   }
 })
 
-$('#index-eight').on('click', function () {
+$('#index8').on('click', function () {
   if (currentGame.cells[8] === '') {
-    $('#index-eight').text(playerToken)
+    $('#index8').text(playerToken)
     currentGame.cells.splice(8, 1, playerToken)
     console.log(currentGame.cells)
     checkForWinner()
