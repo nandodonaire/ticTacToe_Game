@@ -389,3 +389,6 @@ $('#index8').on('click', function () {
     console.log("You can't add to this space!")
   }
 })
+
+$('.logged-in').addClass('hide')
+$('.game-functionality').addClass('hide')
