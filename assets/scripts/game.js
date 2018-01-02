@@ -24,9 +24,11 @@ const changeTurn = function () {
   if (playerToken === 'x') {
     playerToken = 'o'
     // console.log(playerToken)
+    $('#jumbotron-message2').text("It's O's turn!")
   } else {
     playerToken = 'x'
     // console.log(playerToken)
+    $('#jumbotron-message2').text("It's X's turn!")
   }
 }
 
@@ -38,6 +40,7 @@ let moves = 0
 const checkForTie = function () {
   if (moves === 9) {
     console.log("It's a tie!")
+    $('#jumbotron-message').text("It's a tie!")
     currentGame.over = true
     endGame()
   }
@@ -49,6 +52,8 @@ const checkForTie = function () {
 const endGame = function () {
   if (currentGame.over === true) {
     console.log('Restart game')
+    // need a way to re-enable all of the click events once restartGame is
+    // invoked.
     $('.box').off('click')
   }
 }
@@ -67,8 +72,8 @@ const restartGame = function () {
   $('.box').empty()
   $('.game-board').removeClass('hide')
   $('#jumbotron-message').empty()
-  currentGame.over = false
-  currentGame.cells = ['', '', '', '', '', '', '', '', '']
+  $('#jumbotron-message2').empty()
+  moves = 0
   playerToken = 'x'
 }
 $('#game-create').on('submit', restartGame)
@@ -79,10 +84,12 @@ $('#game-create').on('submit', restartGame)
 const checkForWinner = function () {
   if ((currentGame.cells[0] === 'x' && currentGame.cells[1] === 'x' && currentGame.cells[2] === 'x') || (currentGame.cells[3] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[5] === 'x') || (currentGame.cells[6] === 'x' && currentGame.cells[7] === 'x' && currentGame.cells[8] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[3] === 'x' && currentGame.cells[6] === 'x') || (currentGame.cells[1] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[7] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[1] === 'x' && currentGame.cells[2] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[8] === 'x') || (currentGame.cells[2] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[6] === 'x')) {
     console.log('x is the winner!')
+    $('#jumbotron-message').text('X is the winner!')
     currentGame.over = true
     endGame()
   } else if ((currentGame.cells[0] === 'o' && currentGame.cells[1] === 'o' && currentGame.cells[2] === 'o') || (currentGame.cells[3] === 'o' && currentGame.cells[4] === 'o' && currentGame.cells[5] === 'o') || (currentGame.cells[6] === 'o' && currentGame.cells[7] === 'o' && currentGame.cells[8] === 'o') || (currentGame.cells[0] === 'o' && currentGame.cells[3] === 'o' && currentGame.cells[6] === 'o') || (currentGame.cells[1] === 'o' && currentGame.cells[4] === 'o' && currentGame.cells[7] === 'o') || (currentGame.cells[0] === 'o' && currentGame.cells[1] === 'o' && currentGame.cells[2] === 'o') || (currentGame.cells[0] === 'o' && currentGame.cells[4] === 'o' && currentGame.cells[8] === 'o') || (currentGame.cells[2] === 'o' && currentGame.cells[4] === 'o' && currentGame.cells[6] === 'o')) {
     console.log('o is the winner!')
+    $('#jumbotron-message').text('O is the winner!')
     currentGame.over = true
     endGame()
   }
@@ -120,6 +127,7 @@ $('#index0').on('click', function () {
     changeTurn()
   } else {
     console.log("You can't add to this space!")
+    $('#jumbotron-message').text("You can't add to this space!")
   }
 })
 
@@ -154,6 +162,7 @@ $('#index1').on('click', function () {
     changeTurn()
   } else {
     console.log("You can't add to this space!")
+    $('#jumbotron-message').text("You can't add to this space!")
   }
 })
 
@@ -188,6 +197,7 @@ $('#index2').on('click', function () {
     changeTurn()
   } else {
     console.log("You can't add to this space!")
+    $('#jumbotron-message').text("You can't add to this space!")
   }
 })
 
@@ -221,6 +231,7 @@ $('#index3').on('click', function () {
     changeTurn()
   } else {
     console.log("You can't add to this space!")
+    $('#jumbotron-message').text("You can't add to this space!")
   }
 })
 
@@ -254,6 +265,7 @@ $('#index4').on('click', function () {
     changeTurn()
   } else {
     console.log("You can't add to this space!")
+    $('#jumbotron-message').text("You can't add to this space!")
   }
 })
 
@@ -287,6 +299,7 @@ $('#index5').on('click', function () {
     changeTurn()
   } else {
     console.log("You can't add to this space!")
+    $('#jumbotron-message').text("You can't add to this space!")
   }
 })
 
@@ -320,6 +333,7 @@ $('#index6').on('click', function () {
     changeTurn()
   } else {
     console.log("You can't add to this space!")
+    $('#jumbotron-message').text("You can't add to this space!")
   }
 })
 
@@ -353,6 +367,7 @@ $('#index7').on('click', function () {
     changeTurn()
   } else {
     console.log("You can't add to this space!")
+    $('#jumbotron-message').text("You can't add to this space!")
   }
 })
 
@@ -386,6 +401,7 @@ $('#index8').on('click', function () {
     changeTurn()
   } else {
     console.log("You can't add to this space!")
+    $('#jumbotron-message').text("You can't add to this space!")
   }
 })
 

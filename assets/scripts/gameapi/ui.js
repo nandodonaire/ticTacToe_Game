@@ -31,8 +31,14 @@ const searchGameFailure = function (error) {
 const createGameSuccess = function (data) {
   console.log('game id is', data.game.id)
   // console.log('Created game!')
-  $('#jumbotron-message').text('Created game!')
+  $('#jumbotron-message').text('Created ')
   $('#jumbotron-message').css('color', 'green')
+  const gameHtml = (
+    `<ul>
+    <li>Game Id: ${data.game.id}</li>
+    </ul>`
+  )
+  $('#jumbotron-message').append(gameHtml)
   store.game = data.game
   // console.log('the stored data', store)
 }
