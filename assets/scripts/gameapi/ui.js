@@ -18,6 +18,13 @@ const searchGameSuccess = function (data) {
   console.log(data)
   $('#jumbotron-message').text('Here is the game!')
   $('#jumbotron-message').css('color', 'green')
+  const gameHtml = (
+    `<ul>
+    <li>Game Cells: ${data.game.cells}</li>
+    <li>Game Over: ${data.game.over}</li>
+    </ul>`
+  )
+  $('#jumbotron-message').append(gameHtml)
   store.game = data.game
   // console.log('the stored data', store)
 }
