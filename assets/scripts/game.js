@@ -2,6 +2,7 @@
 
 const config = require('./config')
 const store = require('./store')
+// const gameApi = require('./gameapi/api')
 
 // this is the blank game board
 let currentGame = {
@@ -95,6 +96,28 @@ const checkForWinner = function () {
   }
 }
 
+// this function is to update the api after each click. Tried adding this to
+// api.js file, but was having issues getting that to work.
+
+const updateGame = function (index) {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': index,
+          'value': playerToken
+        },
+        'over': currentGame.over
+      }
+    }
+  })
+}
+
 // these are all of the click events for the grid.
 
 $('#index0').on('click', function () {
@@ -105,25 +128,7 @@ $('#index0').on('click', function () {
     checkForWinner()
     moves++
     checkForTie()
-    const updateGame = function () {
-      return $.ajax({
-        url: config.apiOrigin + '/games/' + store.game.id,
-        method: 'PATCH',
-        headers: {
-          Authorization: 'Token token=' + store.user.token
-        },
-        data: {
-          'game': {
-            'cell': {
-              'index': 0,
-              'value': playerToken
-            },
-            'over': currentGame.over
-          }
-        }
-      })
-    }
-    updateGame()
+    updateGame(0)
     changeTurn()
   } else {
     console.log("You can't add to this space!")
@@ -140,25 +145,7 @@ $('#index1').on('click', function () {
     checkForWinner()
     moves++
     checkForTie()
-    const updateGame = function () {
-      return $.ajax({
-        url: config.apiOrigin + '/games/' + store.game.id,
-        method: 'PATCH',
-        headers: {
-          Authorization: 'Token token=' + store.user.token
-        },
-        data: {
-          'game': {
-            'cell': {
-              'index': 1,
-              'value': playerToken
-            },
-            'over': currentGame.over
-          }
-        }
-      })
-    }
-    updateGame()
+    updateGame(1)
     changeTurn()
   } else {
     console.log("You can't add to this space!")
@@ -175,25 +162,7 @@ $('#index2').on('click', function () {
     checkForWinner()
     moves++
     checkForTie()
-    const updateGame = function () {
-      return $.ajax({
-        url: config.apiOrigin + '/games/' + store.game.id,
-        method: 'PATCH',
-        headers: {
-          Authorization: 'Token token=' + store.user.token
-        },
-        data: {
-          'game': {
-            'cell': {
-              'index': 2,
-              'value': playerToken
-            },
-            'over': currentGame.over
-          }
-        }
-      })
-    }
-    updateGame()
+    updateGame(2)
     changeTurn()
   } else {
     console.log("You can't add to this space!")
@@ -209,25 +178,7 @@ $('#index3').on('click', function () {
     checkForWinner()
     moves++
     checkForTie()
-    const updateGame = function () {
-      return $.ajax({
-        url: config.apiOrigin + '/games/' + store.game.id,
-        method: 'PATCH',
-        headers: {
-          Authorization: 'Token token=' + store.user.token
-        },
-        data: {
-          'game': {
-            'cell': {
-              'index': 3,
-              'value': playerToken
-            },
-            'over': currentGame.over
-          }
-        }
-      })
-    }
-    updateGame()
+    updateGame(3)
     changeTurn()
   } else {
     console.log("You can't add to this space!")
@@ -243,25 +194,7 @@ $('#index4').on('click', function () {
     checkForWinner()
     moves++
     checkForTie()
-    const updateGame = function () {
-      return $.ajax({
-        url: config.apiOrigin + '/games/' + store.game.id,
-        method: 'PATCH',
-        headers: {
-          Authorization: 'Token token=' + store.user.token
-        },
-        data: {
-          'game': {
-            'cell': {
-              'index': 4,
-              'value': playerToken
-            },
-            'over': currentGame.over
-          }
-        }
-      })
-    }
-    updateGame()
+    updateGame(4)
     changeTurn()
   } else {
     console.log("You can't add to this space!")
@@ -277,25 +210,7 @@ $('#index5').on('click', function () {
     checkForWinner()
     moves++
     checkForTie()
-    const updateGame = function () {
-      return $.ajax({
-        url: config.apiOrigin + '/games/' + store.game.id,
-        method: 'PATCH',
-        headers: {
-          Authorization: 'Token token=' + store.user.token
-        },
-        data: {
-          'game': {
-            'cell': {
-              'index': 5,
-              'value': playerToken
-            },
-            'over': currentGame.over
-          }
-        }
-      })
-    }
-    updateGame()
+    updateGame(5)
     changeTurn()
   } else {
     console.log("You can't add to this space!")
@@ -311,25 +226,7 @@ $('#index6').on('click', function () {
     checkForWinner()
     moves++
     checkForTie()
-    const updateGame = function () {
-      return $.ajax({
-        url: config.apiOrigin + '/games/' + store.game.id,
-        method: 'PATCH',
-        headers: {
-          Authorization: 'Token token=' + store.user.token
-        },
-        data: {
-          'game': {
-            'cell': {
-              'index': 6,
-              'value': playerToken
-            },
-            'over': currentGame.over
-          }
-        }
-      })
-    }
-    updateGame()
+    updateGame(6)
     changeTurn()
   } else {
     console.log("You can't add to this space!")
@@ -345,25 +242,7 @@ $('#index7').on('click', function () {
     checkForWinner()
     moves++
     checkForTie()
-    const updateGame = function () {
-      return $.ajax({
-        url: config.apiOrigin + '/games/' + store.game.id,
-        method: 'PATCH',
-        headers: {
-          Authorization: 'Token token=' + store.user.token
-        },
-        data: {
-          'game': {
-            'cell': {
-              'index': 7,
-              'value': playerToken
-            },
-            'over': currentGame.over
-          }
-        }
-      })
-    }
-    updateGame()
+    updateGame(7)
     changeTurn()
   } else {
     console.log("You can't add to this space!")
@@ -379,25 +258,7 @@ $('#index8').on('click', function () {
     checkForWinner()
     moves++
     checkForTie()
-    const updateGame = function () {
-      return $.ajax({
-        url: config.apiOrigin + '/games/' + store.game.id,
-        method: 'PATCH',
-        headers: {
-          Authorization: 'Token token=' + store.user.token
-        },
-        data: {
-          'game': {
-            'cell': {
-              'index': 8,
-              'value': playerToken
-            },
-            'over': currentGame.over
-          }
-        }
-      })
-    }
-    updateGame()
+    updateGame(8)
     changeTurn()
   } else {
     console.log("You can't add to this space!")
