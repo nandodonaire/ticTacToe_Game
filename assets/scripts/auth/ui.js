@@ -48,6 +48,7 @@ const signOutSuccess = function () {
   $('modalLabel').css('color', 'green')
   $('.logged-in').addClass('hide')
   $('.game-functionality').addClass('hide')
+  $('.game-board').addClass('hide')
   store.user = null
 }
 

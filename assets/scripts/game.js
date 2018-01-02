@@ -53,8 +53,6 @@ const endGame = function () {
   }
 }
 
-// function to restart the game, although it's currently refreshing the page.
-
 const restartGame = function () {
   currentGame = {
     id: 1,
@@ -67,7 +65,8 @@ const restartGame = function () {
     player_o: null
   }
   $('.box').empty()
-  $('#message').empty()
+  $('.game-board').removeClass('hide')
+  $('#jumbotron-message').empty()
   currentGame.over = false
   currentGame.cells = ['', '', '', '', '', '', '', '', '']
   playerToken = 'x'
@@ -390,5 +389,7 @@ $('#index8').on('click', function () {
   }
 })
 
+// these lines hide the options that should only be available while logged in.
 $('.logged-in').addClass('hide')
 $('.game-functionality').addClass('hide')
+$('.game-board').addClass('hide')
