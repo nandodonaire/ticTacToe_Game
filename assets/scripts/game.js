@@ -95,7 +95,7 @@ $('#index0').on('click', function () {
   if (currentGame.cells[0] === '') {
     $('#index0').text(playerToken)
     currentGame.cells.splice(0, 1, playerToken)
-    console.log(currentGame.cells)
+    // console.log(currentGame.cells)
     checkForWinner()
     moves++
     checkForTie()
@@ -129,7 +129,7 @@ $('#index1').on('click', function () {
   if (currentGame.cells[1] === '') {
     $('#index1').text(playerToken)
     currentGame.cells.splice(1, 1, playerToken)
-    console.log(currentGame.cells)
+    // console.log(currentGame.cells)
     checkForWinner()
     moves++
     checkForTie()
@@ -163,7 +163,7 @@ $('#index2').on('click', function () {
   if (currentGame.cells[2] === '') {
     $('#index2').text(playerToken)
     currentGame.cells.splice(2, 1, playerToken)
-    console.log(currentGame.cells)
+    // console.log(currentGame.cells)
     checkForWinner()
     moves++
     checkForTie()
@@ -196,7 +196,7 @@ $('#index3').on('click', function () {
   if (currentGame.cells[3] === '') {
     $('#index3').text(playerToken)
     currentGame.cells.splice(3, 1, playerToken)
-    console.log(currentGame.cells)
+    // console.log(currentGame.cells)
     checkForWinner()
     moves++
     checkForTie()
@@ -229,7 +229,7 @@ $('#index4').on('click', function () {
   if (currentGame.cells[4] === '') {
     $('#index4').text(playerToken)
     currentGame.cells.splice(4, 1, playerToken)
-    console.log(currentGame.cells)
+    // console.log(currentGame.cells)
     checkForWinner()
     moves++
     checkForTie()
@@ -262,7 +262,7 @@ $('#index5').on('click', function () {
   if (currentGame.cells[5] === '') {
     $('#index5').text(playerToken)
     currentGame.cells.splice(5, 1, playerToken)
-    console.log(currentGame.cells)
+    // console.log(currentGame.cells)
     checkForWinner()
     moves++
     checkForTie()
@@ -295,7 +295,7 @@ $('#index6').on('click', function () {
   if (currentGame.cells[6] === '') {
     $('#index6').text(playerToken)
     currentGame.cells.splice(6, 1, playerToken)
-    console.log(currentGame.cells)
+    // console.log(currentGame.cells)
     checkForWinner()
     moves++
     checkForTie()
@@ -328,7 +328,7 @@ $('#index7').on('click', function () {
   if (currentGame.cells[7] === '') {
     $('#index7').text(playerToken)
     currentGame.cells.splice(7, 1, playerToken)
-    console.log(currentGame.cells)
+    // console.log(currentGame.cells)
     checkForWinner()
     moves++
     checkForTie()
@@ -361,7 +361,7 @@ $('#index8').on('click', function () {
   if (currentGame.cells[8] === '') {
     $('#index8').text(playerToken)
     currentGame.cells.splice(8, 1, playerToken)
-    console.log(currentGame.cells)
+    // console.log(currentGame.cells)
     checkForWinner()
     moves++
     checkForTie()

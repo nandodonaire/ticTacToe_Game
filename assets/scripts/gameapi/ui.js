@@ -19,7 +19,7 @@ const searchGameSuccess = function (data) {
   $('#message').text('Here is the game!')
   $('#message').css('color', 'green')
   store.game = data.game
-  console.log('the stored data', store)
+  // console.log('the stored data', store)
 }
 
 const searchGameFailure = function (error) {
@@ -29,12 +29,12 @@ const searchGameFailure = function (error) {
 }
 
 const createGameSuccess = function (data) {
-  // console.log(data)
-  console.log('Created game!')
+  console.log('game id is', data.game.id)
+  // console.log('Created game!')
   $('#message').text('Created game!')
   $('#message').css('color', 'green')
   store.game = data.game
-  console.log('the stored data', store)
+  // console.log('the stored data', store)
 }
 
 const createGameFailure = function (error) {
