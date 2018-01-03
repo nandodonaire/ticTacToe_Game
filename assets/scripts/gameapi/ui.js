@@ -3,9 +3,11 @@
 const store = require('../store')
 
 const searchGamesSuccess = function (data) {
-  console.log(data)
-  $('#jumbotron-message').text('Here are the games!')
-  $('#jumbotron-message').css('color', 'green')
+  for (let i = 0; i < data.games.length; i++) {
+    // console.log(data.games[i])
+    $('#jumbotron-message').text('Total number of games created: ' + [i])
+    $('#jumbotron-message').css('color', 'green')
+  }
 }
 
 const searchGamesFailure = function (error) {
@@ -16,7 +18,7 @@ const searchGamesFailure = function (error) {
 
 const searchGameSuccess = function (data) {
   console.log(data)
-  $('#jumbotron-message').text('Here is the game!')
+  $('#jumbotron-message').text('Here is game!')
   $('#jumbotron-message').css('color', 'green')
   const gameHtml = (
     `<ul>
@@ -25,7 +27,7 @@ const searchGameSuccess = function (data) {
     </ul>`
   )
   $('#jumbotron-message').append(gameHtml)
-  store.game = data.game
+  // store.game = data.game
   // console.log('the stored data', store)
 }
 

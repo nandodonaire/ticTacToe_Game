@@ -31,6 +31,7 @@ const changeTurn = function () {
     // console.log(playerToken)
     $('#jumbotron-message2').text("It's X's turn!")
   }
+  console.log(playerToken)
 }
 
 // this is a counter of the number of turns
@@ -154,7 +155,7 @@ $('#index0').on('click', function () {
     changeTurn()
   } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
-    $('#jumbotron-message').text("You can't add to this space!")
+    $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
   }
@@ -173,7 +174,7 @@ $('#index1').on('click', function () {
     changeTurn()
   } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
-    $('#jumbotron-message').text("You can't add to this space!")
+    $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
   }
@@ -192,7 +193,7 @@ $('#index2').on('click', function () {
     changeTurn()
   } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
-    $('#jumbotron-message').text("You can't add to this space!")
+    $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
   }
@@ -210,7 +211,7 @@ $('#index3').on('click', function () {
     changeTurn()
   } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
-    $('#jumbotron-message').text("You can't add to this space!")
+    $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
   }
@@ -228,7 +229,7 @@ $('#index4').on('click', function () {
     changeTurn()
   } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
-    $('#jumbotron-message').text("You can't add to this space!")
+    $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
   }
@@ -246,7 +247,7 @@ $('#index5').on('click', function () {
     changeTurn()
   } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
-    $('#jumbotron-message').text("You can't add to this space!")
+    $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
   }
@@ -264,7 +265,7 @@ $('#index6').on('click', function () {
     changeTurn()
   } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
-    $('#jumbotron-message').text("You can't add to this space!")
+    $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
   }
@@ -282,7 +283,7 @@ $('#index7').on('click', function () {
     changeTurn()
   } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
-    $('#jumbotron-message').text("You can't add to this space!")
+    $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
   }
@@ -300,7 +301,7 @@ $('#index8').on('click', function () {
     changeTurn()
   } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
-    $('#jumbotron-message').text("You can't add to this space!")
+    $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
   }
