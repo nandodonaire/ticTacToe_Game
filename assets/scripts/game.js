@@ -55,7 +55,8 @@ const endGame = function () {
     console.log('Restart game')
     // need a way to re-enable all of the click events once restartGame is
     // invoked.
-    $('.box').off('click')
+    // $('.box').off('click')
+    currentGame.cells = ''
   }
 }
 
@@ -99,7 +100,8 @@ const checkForWinner = function () {
 // this function is to update the api after each click. Tried adding this to
 // api.js file, but was having issues getting that to work.
 
-const updateGame = function (index) {
+const updateGame = function (data) {
+  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
@@ -109,7 +111,7 @@ const updateGame = function (index) {
     data: {
       'game': {
         'cell': {
-          'index': index,
+          'index': data,
           'value': playerToken
         },
         'over': currentGame.over
@@ -118,7 +120,27 @@ const updateGame = function (index) {
   })
 }
 
+// const clickEvent = function (data) {
+//   console.log(data)
+//   if (currentGame.cells[data] === '') {
+//     $(this).text(playerToken)
+//     currentGame.cells.splice(data, 1, playerToken)
+//     // console.log(currentGame.cells)
+//     checkForWinner()
+//     moves++
+//     checkForTie()
+//     updateGame(data)
+//     changeTurn()
+//   } else {
+//     console.log("You can't add to this space!")
+//     $('#jumbotron-message').text("You can't add to this space!")
+//   }
+// }
+
 // these are all of the click events for the grid.
+
+// $('#index0').on('click', clickEvent, 0)
+// $('#index0').on('click', updateGame, 0)
 
 $('#index0').on('click', function () {
   if (currentGame.cells[0] === '') {
@@ -130,9 +152,11 @@ $('#index0').on('click', function () {
     checkForTie()
     updateGame(0)
     changeTurn()
-  } else {
+  } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
     $('#jumbotron-message').text("You can't add to this space!")
+  } else {
+    $('#jumbotron-message').text('Please start a New Game!')
   }
 })
 
@@ -147,9 +171,11 @@ $('#index1').on('click', function () {
     checkForTie()
     updateGame(1)
     changeTurn()
-  } else {
+  } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
     $('#jumbotron-message').text("You can't add to this space!")
+  } else {
+    $('#jumbotron-message').text('Please start a New Game!')
   }
 })
 
@@ -164,9 +190,11 @@ $('#index2').on('click', function () {
     checkForTie()
     updateGame(2)
     changeTurn()
-  } else {
+  } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
     $('#jumbotron-message').text("You can't add to this space!")
+  } else {
+    $('#jumbotron-message').text('Please start a New Game!')
   }
 })
 
@@ -180,9 +208,11 @@ $('#index3').on('click', function () {
     checkForTie()
     updateGame(3)
     changeTurn()
-  } else {
+  } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
     $('#jumbotron-message').text("You can't add to this space!")
+  } else {
+    $('#jumbotron-message').text('Please start a New Game!')
   }
 })
 
@@ -196,9 +226,11 @@ $('#index4').on('click', function () {
     checkForTie()
     updateGame(4)
     changeTurn()
-  } else {
+  } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
     $('#jumbotron-message').text("You can't add to this space!")
+  } else {
+    $('#jumbotron-message').text('Please start a New Game!')
   }
 })
 
@@ -212,9 +244,11 @@ $('#index5').on('click', function () {
     checkForTie()
     updateGame(5)
     changeTurn()
-  } else {
+  } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
     $('#jumbotron-message').text("You can't add to this space!")
+  } else {
+    $('#jumbotron-message').text('Please start a New Game!')
   }
 })
 
@@ -228,9 +262,11 @@ $('#index6').on('click', function () {
     checkForTie()
     updateGame(6)
     changeTurn()
-  } else {
+  } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
     $('#jumbotron-message').text("You can't add to this space!")
+  } else {
+    $('#jumbotron-message').text('Please start a New Game!')
   }
 })
 
@@ -244,9 +280,11 @@ $('#index7').on('click', function () {
     checkForTie()
     updateGame(7)
     changeTurn()
-  } else {
+  } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
     $('#jumbotron-message').text("You can't add to this space!")
+  } else {
+    $('#jumbotron-message').text('Please start a New Game!')
   }
 })
 
@@ -260,9 +298,11 @@ $('#index8').on('click', function () {
     checkForTie()
     updateGame(8)
     changeTurn()
-  } else {
+  } else if (currentGame.cells !== '') {
     console.log("You can't add to this space!")
     $('#jumbotron-message').text("You can't add to this space!")
+  } else {
+    $('#jumbotron-message').text('Please start a New Game!')
   }
 })
 
