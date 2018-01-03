@@ -20,6 +20,7 @@ const signInSuccess = function (data) {
   $('#modalLabel').css('color', 'green')
   $('.logged-in').removeClass('hide')
   $('.game-functionality').removeClass('hide')
+  $('.logged-out').addClass('hide')
   store.user = data.user
   console.log('the stored data', store)
 }
@@ -49,6 +50,10 @@ const signOutSuccess = function () {
   $('.logged-in').addClass('hide')
   $('.game-functionality').addClass('hide')
   $('.game-board').addClass('hide')
+  $('.logged-out').removeClass('hide')
+  $('#jumbotron-message').text('Please sign in and select New Game to start playing!')
+  $('#jumbotron-message').css('color', 'black')
+  $('#jumbotron-message2').empty()
   store.user = null
 }
 
