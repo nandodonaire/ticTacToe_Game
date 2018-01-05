@@ -3,7 +3,8 @@
 const store = require('../store')
 
 const searchGamesSuccess = function (data) {
-  for (let i = 0; i < data.games.length; i++) {
+  console.log(data)
+  for (let i = 0; i <= data.games.length; i++) {
     // console.log(data.games[i])
     $('#jumbotron-message').text('Total number of games created: ' + [i])
     $('#jumbotron-message').css('color', 'green')
