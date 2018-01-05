@@ -6,7 +6,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const onSearchGames = function (event) {
   const data = getFormFields(this)
-  console.log('events', data)
+  // console.log('events', data)
   event.preventDefault()
   gameApi.searchGames(data)
     .then(gameUi.searchGamesSuccess)
@@ -15,7 +15,7 @@ const onSearchGames = function (event) {
 
 const onSearchGame = function (event) {
   const data = getFormFields(this)
-  console.log('events', data)
+  // console.log('events', data)
   event.preventDefault()
   gameApi.searchGame(data)
     .then(gameUi.searchGameSuccess)

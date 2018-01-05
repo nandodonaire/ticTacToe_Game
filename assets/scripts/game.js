@@ -2,7 +2,6 @@
 
 const config = require('./config')
 const store = require('./store')
-// const gameApi = require('./gameapi/api')
 
 // this is the blank game board
 let currentGame = {
@@ -31,7 +30,7 @@ const changeTurn = function () {
     // console.log(playerToken)
     $('#jumbotron-message2').text("It's X's turn!")
   }
-  console.log(playerToken)
+  // console.log(playerToken)
 }
 
 // this is a counter of the number of turns
@@ -41,7 +40,7 @@ let moves = 0
 // currentGame.over to true, and ends the game.
 const checkForTie = function () {
   if (moves === 9) {
-    console.log("It's a tie!")
+    // console.log("It's a tie!")
     $('#jumbotron-message').text("It's a tie!")
     currentGame.over = true
     endGame()
@@ -53,10 +52,7 @@ const checkForTie = function () {
 // game board.
 const endGame = function () {
   if (currentGame.over === true) {
-    console.log('Restart game')
-    // need a way to re-enable all of the click events once restartGame is
-    // invoked.
-    // $('.box').off('click')
+    // console.log('Restart game')
     currentGame.cells = ''
   }
 }
@@ -86,12 +82,12 @@ $('#game-create').on('submit', restartGame)
 
 const checkForWinner = function () {
   if ((currentGame.cells[0] === 'x' && currentGame.cells[1] === 'x' && currentGame.cells[2] === 'x') || (currentGame.cells[3] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[5] === 'x') || (currentGame.cells[6] === 'x' && currentGame.cells[7] === 'x' && currentGame.cells[8] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[3] === 'x' && currentGame.cells[6] === 'x') || (currentGame.cells[1] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[7] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[1] === 'x' && currentGame.cells[2] === 'x') || (currentGame.cells[0] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[8] === 'x') || (currentGame.cells[2] === 'x' && currentGame.cells[4] === 'x' && currentGame.cells[6] === 'x')) {
-    console.log('x is the winner!')
+    // console.log('x is the winner!')
     $('#jumbotron-message').text('X is the winner!')
     currentGame.over = true
     endGame()
   } else if ((currentGame.cells[0] === 'o' && currentGame.cells[1] === 'o' && currentGame.cells[2] === 'o') || (currentGame.cells[3] === 'o' && currentGame.cells[4] === 'o' && currentGame.cells[5] === 'o') || (currentGame.cells[6] === 'o' && currentGame.cells[7] === 'o' && currentGame.cells[8] === 'o') || (currentGame.cells[0] === 'o' && currentGame.cells[3] === 'o' && currentGame.cells[6] === 'o') || (currentGame.cells[1] === 'o' && currentGame.cells[4] === 'o' && currentGame.cells[7] === 'o') || (currentGame.cells[0] === 'o' && currentGame.cells[1] === 'o' && currentGame.cells[2] === 'o') || (currentGame.cells[0] === 'o' && currentGame.cells[4] === 'o' && currentGame.cells[8] === 'o') || (currentGame.cells[2] === 'o' && currentGame.cells[4] === 'o' && currentGame.cells[6] === 'o')) {
-    console.log('o is the winner!')
+    // console.log('o is the winner!')
     $('#jumbotron-message').text('O is the winner!')
     currentGame.over = true
     endGame()
@@ -102,7 +98,7 @@ const checkForWinner = function () {
 // api.js file, but was having issues getting that to work.
 
 const updateGame = function (data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
@@ -121,28 +117,6 @@ const updateGame = function (data) {
   })
 }
 
-// const clickEvent = function (data) {
-//   console.log(data)
-//   if (currentGame.cells[data] === '') {
-//     $(this).text(playerToken)
-//     currentGame.cells.splice(data, 1, playerToken)
-//     // console.log(currentGame.cells)
-//     checkForWinner()
-//     moves++
-//     checkForTie()
-//     updateGame(data)
-//     changeTurn()
-//   } else {
-//     console.log("You can't add to this space!")
-//     $('#jumbotron-message').text("You can't add to this space!")
-//   }
-// }
-
-// these are all of the click events for the grid.
-
-// $('#index0').on('click', clickEvent, 0)
-// $('#index0').on('click', updateGame, 0)
-
 $('#index0').on('click', function () {
   if (currentGame.cells[0] === '') {
     $('#index0').text(playerToken)
@@ -154,7 +128,7 @@ $('#index0').on('click', function () {
     updateGame(0)
     changeTurn()
   } else if (currentGame.cells !== '') {
-    console.log("You can't add to this space!")
+    // console.log("You can't add to this space!")
     $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
@@ -173,7 +147,7 @@ $('#index1').on('click', function () {
     updateGame(1)
     changeTurn()
   } else if (currentGame.cells !== '') {
-    console.log("You can't add to this space!")
+    // console.log("You can't add to this space!")
     $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
@@ -192,7 +166,7 @@ $('#index2').on('click', function () {
     updateGame(2)
     changeTurn()
   } else if (currentGame.cells !== '') {
-    console.log("You can't add to this space!")
+    // console.log("You can't add to this space!")
     $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
@@ -210,7 +184,7 @@ $('#index3').on('click', function () {
     updateGame(3)
     changeTurn()
   } else if (currentGame.cells !== '') {
-    console.log("You can't add to this space!")
+    // console.log("You can't add to this space!")
     $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
@@ -228,7 +202,7 @@ $('#index4').on('click', function () {
     updateGame(4)
     changeTurn()
   } else if (currentGame.cells !== '') {
-    console.log("You can't add to this space!")
+    // console.log("You can't add to this space!")
     $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
@@ -246,7 +220,7 @@ $('#index5').on('click', function () {
     updateGame(5)
     changeTurn()
   } else if (currentGame.cells !== '') {
-    console.log("You can't add to this space!")
+    // console.log("You can't add to this space!")
     $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
@@ -264,7 +238,7 @@ $('#index6').on('click', function () {
     updateGame(6)
     changeTurn()
   } else if (currentGame.cells !== '') {
-    console.log("You can't add to this space!")
+    // console.log("You can't add to this space!")
     $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
@@ -282,7 +256,7 @@ $('#index7').on('click', function () {
     updateGame(7)
     changeTurn()
   } else if (currentGame.cells !== '') {
-    console.log("You can't add to this space!")
+    // console.log("You can't add to this space!")
     $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
@@ -300,7 +274,7 @@ $('#index8').on('click', function () {
     updateGame(8)
     changeTurn()
   } else if (currentGame.cells !== '') {
-    console.log("You can't add to this space!")
+    // console.log("You can't add to this space!")
     $('#jumbotron-message2').text("You can't add to this space!")
   } else {
     $('#jumbotron-message').text('Please start a New Game!')
