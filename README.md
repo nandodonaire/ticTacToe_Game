@@ -43,5 +43,5 @@ different logic to the function.
 
 Problems to be fixed on future release:
 
-1) Change the wording of the "Sign In" button once the user is logged in. Maybe
-call it "Account".
+1) When a user is not signed in, the blue button should display "Sign In". Once
+the user is logged in, change that button to read "Account".

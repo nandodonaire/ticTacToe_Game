@@ -37,25 +37,6 @@ const createGame = function (data) {
   })
 }
 
-// const updateGame = function (index) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/games/' + store.game.id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data: {
-//       'game': {
-//         'cell': {
-//           'index': index,
-//           'value': game.playerToken
-//         },
-//         'over': game.currentGame.over
-//       }
-//     }
-//   })
-// }
-
 module.exports = {
   searchGames,
   searchGame,
