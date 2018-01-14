@@ -23,6 +23,7 @@ const searchGameSuccess = function (data) {
   $('#jumbotron-message').css('color', 'green')
   const gameHtml = (
     `<ul>
+    <li>Game ID: ${data.game.id} </li>
     <li>Game Cells: ${data.game.cells}</li>
     <li>Game Over: ${data.game.over}</li>
     </ul>`
@@ -51,6 +52,7 @@ const createGameSuccess = function (data) {
   $('#jumbotron-message').append(gameHtml)
   store.game = data.game
   // console.log('the stored data', store)
+  $('.game-search').removeClass('hide')
 }
 
 const createGameFailure = function (data) {

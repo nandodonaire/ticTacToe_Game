@@ -54,6 +54,7 @@ const signOutSuccess = function () {
   $('#jumbotron-message').text('Please sign in and select New Game to start playing!')
   $('#jumbotron-message').css('color', 'black')
   $('#jumbotron-message2').empty()
+  $('.game-search').addClass('hide')
   store.user = null
 }
 

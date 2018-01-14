@@ -20,6 +20,7 @@ const onSearchGame = function (event) {
   gameApi.searchGame(data)
     .then(gameUi.searchGameSuccess)
     .catch(gameUi.searchGameFailure)
+  $('#game-search').find('input:text, select, textarea').val('')
 }
 
 const onCreateGame = function (event) {

@@ -285,3 +285,5 @@ $('#index8').on('click', function () {
 $('.logged-in').addClass('hide')
 $('.game-functionality').addClass('hide')
 $('.game-board').addClass('hide')
+// game-search should only be available once a user has created a game.
+$('.game-search').addClass('hide')
