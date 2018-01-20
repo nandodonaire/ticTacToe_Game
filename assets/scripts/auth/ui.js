@@ -55,6 +55,7 @@ const signOutSuccess = function () {
   $('#jumbotron-message').css('color', 'black')
   $('#jumbotron-message2').empty()
   $('.game-search').addClass('hide')
+  $('.games-search').addClass('hide')
   store.user = null
 }
 

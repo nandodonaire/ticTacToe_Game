@@ -6,7 +6,7 @@ const searchGamesSuccess = function (data) {
   // console.log(data)
   for (let i = 0; i <= data.games.length; i++) {
     // console.log(data.games[i])
-    $('#jumbotron-message').text('Total number of games played: ' + [i])
+    $('#jumbotron-message').text('Total number of games created: ' + [i])
     $('#jumbotron-message').css('color', 'green')
   }
 }
@@ -42,7 +42,7 @@ const searchGameFailure = function (data) {
 const createGameSuccess = function (data) {
   // console.log('game id is', data.game.id)
   // console.log('Created game!')
-  $('#jumbotron-message').text('Started ')
+  $('#jumbotron-message').text('Created ')
   $('#jumbotron-message').css('color', 'green')
   const gameHtml = (
     `<ul>
@@ -53,6 +53,7 @@ const createGameSuccess = function (data) {
   store.game = data.game
   // console.log('the stored data', store)
   $('.game-search').removeClass('hide')
+  $('.games-search').removeClass('hide')
 }
 
 const createGameFailure = function (data) {
